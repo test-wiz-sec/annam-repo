@@ -1,0 +1,21 @@
+# Critical & High Severity SCA Triggers
+Django==1.11.28
+requests==2.20.0
+flask==0.12.2
+jinja2==2.10
+numpy==1.21.0
+pandas==0.24.2
+cryptography==3.3.1
+aiohttp==3.7.3
+urllib3==1.25.8
+pyyaml==5.3
+ansible==2.9.10
+lxml==4.6.2
+paramiko==2.4.2
+celery==4.4.7
+httplib2==0.18.0
+pillow==8.1.0
+rsa==4.0
+scipy==1.2.1
+sqlparse==0.3.0
+werkzeug==0.15.0
