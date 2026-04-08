@@ -1,0 +1,23 @@
+{
+  "name": "annam-repo",
+  "version": "1.0.0",
+  "description": "SCA test app with known vulnerable dependencies",
+  "main": "app.js",
+  "dependencies": {
+    "lodash": "4.17.15",
+    "axios": "0.21.1",
+    "express": "4.17.1",
+    "node-fetch": "2.6.1",
+    "follow-redirects": "1.14.7",
+    "moment": "2.29.1",
+    "minimist": "1.2.5",
+    "ansi-regex": "5.0.0",
+    "tar": "4.4.13",
+    "semver": "7.3.4",
+    "ws": "7.4.4",
+    "glob-parent": "5.1.1",
+    "path-parse": "1.0.6",
+    "json-schema": "0.2.3",
+    "xmlhttprequest-ssl": "1.6.2"
+  }
+}

@@ -10,19 +10,19 @@ Jinja2==2.11.1          # CVE-2020-28493
 # HTTP / networking
 requests==2.25.0        # CVE-2023-32681
 urllib3==1.26.4         # CVE-2021-33503
-aiohttp==3.7.4          # CVE-2021-21330
+aiohttp==3.9.1          # CVE-2024-23334 (has ARM64 wheels)
 httplib2==0.20.2        # CVE-2021-21240
 
 # Security / crypto
-cryptography==3.3.1     # CVE-2020-36242, CVE-2023-49083
+cryptography==38.0.4    # CVE-2023-49083 (has ARM64 wheels)
 paramiko==2.8.0         # CVE-2022-24302
 rsa==4.0                # CVE-2020-25658
 
 # Data / parsing
 PyYAML==5.3.1           # CVE-2020-14343
-lxml==4.6.5             # CVE-2021-43818
+lxml==4.9.1             # CVE-2022-2309 (has ARM64 wheels)
 sqlparse==0.4.2         # CVE-2021-32839
-Pillow==8.3.0           # CVE-2021-28676, CVE-2021-34552
+Pillow==9.3.0           # CVE-2023-44271 (has ARM64 wheels)
 
 # Task queue
 celery==5.2.2           # CVE-2021-23727
