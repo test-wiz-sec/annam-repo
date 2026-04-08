@@ -24,7 +24,7 @@ jobs:
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
-          args: --file=package-lock.json --severity-threshold=high --sarif-file-output=snyk.sarif
+          args: --file=package-lock.json --severity-threshold=high --sarif-file-output=snyk.sarif --org=94950c75-721b-4627-9aee-cb9de30f4de0
 
       # Upload results to GitHub Security tab
       - name: Upload result to GitHub Code Scanning
@@ -39,4 +39,4 @@ jobs:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
           command: monitor
-          args: --file=package-lock.json
+          args: --file=package-lock.json --org=94950c75-721b-4627-9aee-cb9de30f4de0
