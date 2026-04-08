@@ -1,10 +1,7 @@
-import os
 import django
 import requests
 import flask
 import jinja2
-import numpy as np
-import pandas as pd
 import yaml
 import cryptography
 import aiohttp
@@ -14,28 +11,28 @@ import celery
 import httplib2
 import PIL.Image
 import rsa
-import scipy
 import sqlparse
 import werkzeug
 
+
 def check_vulnerable_versions():
     """
-    This script simply imports and prints versions of libraries
-    that are known to have security vulnerabilities in the 
-    accompanying requirements.txt file.
+    Imports libraries with known CVEs for SCA scanning.
+    Replace requirements.txt / Pipfile.lock and run:
+      snyk test --file=Pipfile.lock   (no install needed)
+      snyk test                        (after pip install)
     """
-    print(f"Django version: {django.get_version()}")
-    print(f"Requests version: {requests.__version__}")
-    print(f"Flask version: {flask.__version__}")
-    print(f"Jinja2 version: {jinja2.__version__}")
-    print(f"PyYAML version: {yaml.__version__}")
-    print(f"Cryptography version: {cryptography.__version__}")
-    
-    # Example of a transitive/dependency risk call
-    http = urllib3.PoolManager()
-    r = http.request('GET', 'http://httpbin.org/robots.txt')
-    print(f"Urllib3 status: {r.status}")
+    print(f"Django: {django.get_version()}")
+    print(f"Requests: {requests.__version__}")
+    print(f"Flask: {flask.__version__}")
+    print(f"Jinja2: {jinja2.__version__}")
+    print(f"PyYAML: {yaml.__version__}")
+    print(f"Cryptography: {cryptography.__version__}")
+    print(f"urllib3: {urllib3.__version__}")
+    print(f"sqlparse: {sqlparse.__version__}")
+    print(f"werkzeug: {werkzeug.__version__}")
+
 
 if __name__ == "__main__":
     check_vulnerable_versions()
-    print("\n--- 20+ SCA Vulnerabilities Loaded in Manifest ---")
+    print("\n--- SCA Vulnerabilities loaded from manifest ---")
