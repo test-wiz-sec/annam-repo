@@ -18,14 +18,13 @@ jobs:
     steps:
       - uses: actions/checkout@master
 
-      # Snyk auto-detects Pipfile.lock in root and scans it without manual install
       - name: Run Snyk to check for vulnerabilities
-        uses: snyk/actions/python-3.11@master
+        uses: snyk/actions/node@master
         continue-on-error: true  # ensures SARIF upload runs even if vulns found
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
-          args: --file=Pipfile.lock --severity-threshold=high --sarif-file-output=snyk.sarif
+          args: --file=package-lock.json --severity-threshold=high --sarif-file-output=snyk.sarif
 
       # Upload results to GitHub Security tab
       - name: Upload result to GitHub Code Scanning
@@ -35,9 +34,9 @@ jobs:
 
       # Send results to Snyk dashboard for ongoing monitoring
       - name: Monitor in Snyk dashboard
-        uses: snyk/actions/python-3.11@master
+        uses: snyk/actions/node@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
           command: monitor
-          args: --file=Pipfile.lock
+          args: --file=package-lock.json
