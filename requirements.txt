@@ -1,21 +1,28 @@
-# Critical & High Severity SCA Triggers
-Django==1.11.28
-requests==2.20.0
-flask==0.12.2
-jinja2==2.10
-numpy==1.21.0
-pandas==0.24.2
-cryptography==3.3.1
-aiohttp==3.7.3
-urllib3==1.25.8
-pyyaml==5.3
-ansible==2.9.10
-lxml==4.6.2
-paramiko==2.4.2
-celery==4.4.7
-httplib2==0.18.0
-pillow==8.1.0
-rsa==4.0
-scipy==1.2.1
-sqlparse==0.3.0
-werkzeug==0.15.0
+# SCA Test File - vulnerable packages with pre-built wheels for Python 3.11
+# All versions below have known CVEs in Snyk's database
+
+# Web frameworks
+Django==3.2.0           # CVE-2021-35042, CVE-2021-44420
+Flask==1.0.0            # CVE-2019-1000024
+werkzeug==1.0.1         # CVE-2020-28724
+Jinja2==2.11.1          # CVE-2020-28493
+
+# HTTP / networking
+requests==2.25.0        # CVE-2023-32681
+urllib3==1.26.4         # CVE-2021-33503
+aiohttp==3.7.4          # CVE-2021-21330
+httplib2==0.20.2        # CVE-2021-21240
+
+# Security / crypto
+cryptography==3.3.1     # CVE-2020-36242, CVE-2023-49083
+paramiko==2.8.0         # CVE-2022-24302
+rsa==4.0                # CVE-2020-25658
+
+# Data / parsing
+PyYAML==5.3.1           # CVE-2020-14343
+lxml==4.6.5             # CVE-2021-43818
+sqlparse==0.4.2         # CVE-2021-32839
+Pillow==8.3.0           # CVE-2021-28676, CVE-2021-34552
+
+# Task queue
+celery==5.2.2           # CVE-2021-23727
